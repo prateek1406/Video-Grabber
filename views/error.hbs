@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title> Video Grabber.IO</title>
+<link rel="stylesheet" type="text/css" href="front.css"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+<style>
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-image:url("img/image.jpg");
+    background-attachment: fixed;
+    background-size:cover;
+
+}
+#image img{
+
+height:90px;
+width:90px;
+float:left;
+margin:12px 0px 0px 15px;
+ 
+}
+
+#header
+{
+height:200px;
+width:200px;
+text-align:center;
+margin-left:30%;
+
+
+
+
+}
+
+#header h1{
+
+color:white;
+padding:10px;
+font-size:50px;
+font-weight:bold;
+/* position:fixed; */
+
+
+}
+#result
+{
+
+  text-align:center;
+  color:white;
+  font-size:20px;
+
+}
+</style>
+
+<!-- <script>
+//   $(document).ready(function()
+//   {
+//        $("h1").animate({right:'510px'},1500);
+       
+        
+//  });
+
+</script> -->
+<script type="text/javascript">
+
+    var app=angular.module("app",[]);
+    app.controller("emp",['$scope',function($scope){
+        
+        
+        $scope.error = '{{error}}';
+
+    }]);
+</script>
+    
+</head>
+<body>
+    
+   
+
+    <div id="image">
+
+        
+            <img src="img/icon.png">
+    </div>
+
+
+    <div id="header">
+
+
+    <h1>  VideoGrabber.io</h1>
+
+    </div>
+  
+<div ng-app="app">
+
+
+    <div ng-controller="emp">
+        <div id="result">
+
+                <h1>{{error}}</h1>
+            </div>
+
+    </div>
+</div>
+</body>
+</html>
+     

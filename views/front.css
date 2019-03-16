@@ -1,0 +1,116 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-image:url("img/image.jpg");
+    background-attachment: fixed;
+    background-size:cover;
+
+}
+
+
+
+.header img{
+
+    height:90px;
+    width:90px;
+    float:left;
+    margin:12px 0px 0px 15px;
+     
+}
+
+.header
+{
+    height:200px;
+    /* margin-left:10%; */
+    position:relative;
+    -webkit-animaton-name:example;
+    animation-duration:8s;
+ 
+    
+
+}
+
+.header h1{
+
+    color:white;
+    padding:10px;
+    font-size:50px;
+    font-weight:bold;
+    padding-top:50px;
+    margin-left:30%;
+
+
+}
+
+ @keyframes example
+{
+        0%   { left:10%; }
+        100%  {left:30%; }
+       
+} 
+.search{
+     float:center;
+}
+
+.search .URL-enter{
+
+    text-align:center;
+    font-size:20px;
+    width:36%;
+    margin-left:22%;
+    border:none;
+    border-bottom: 2px solid rgb(7, 7, 32);
+    height:9%;
+    background-color:transparent;
+    color:white;
+    
+
+
+}
+.search .URL-enter:focus
+{
+    outline:none;
+    color:white;
+    background-color:none;
+}
+.search .button
+
+{
+     width:14%;
+     border-radius:40px;
+     height:12%;
+     background-color:rgb(18, 18, 54);
+     padding:10px;
+     outline:none;
+     border-style:none;
+     cursor: pointer;
+     display:inline-block;
+     box-shadow:3px 8px rgb(23, 23, 49);
+     
+
+    
+}
+.search .URL-enter::placeholder
+
+{
+    padding:10px;
+    font-weight:bold;
+    font-size:20px;
+    outline:none;
+    
+
+}
+.footer
+{
+margin-top:17%;
+font-size:25px;
+text-align:center;
+color:white;
+
+}
+
+.footer a
+{
+    text-decoration:none;
+    color:white;
+}
+
