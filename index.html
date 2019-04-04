@@ -19,8 +19,22 @@
         label {
             display : block
         }
+        .header {
+            margin-top: 40px;
+        }
+        .search {
+            
+            border:none;
+            border-bottom:1px solid;
+            background-color:transparent;
+            font-weight:bold;
+            color:white;
+        }
 
         @media (max-width : 990px){
+            .header {
+                display: inline;
+            }
             .bttn {
                 padding-left : 50%;
             }
@@ -29,7 +43,7 @@
                 width : 250px
             }
             #logo {
-                max-width: 20px;
+                width: 40px;
                 max-height: 20px;
             }
             h1 {
@@ -37,6 +51,9 @@
             }
             #main {
                 padding : 30vh 5vw 10vh 5vw
+            }
+            .search {
+                transform: translateX(-40%);
             }
         }
         @media (min-width : 900px){
@@ -49,7 +66,9 @@
             .bttn-inp {
                 width : 300px
             }
+            
            }
+
 
     </style>
 </head>
@@ -71,7 +90,7 @@
         <div id="main" class="row" >
             <div class="col-xs-12 col-lg-8 form-group bttn " style=" height : 100px; padding-top: 30px ">
                 <label style="text-align: center;">
-                    <input class="form-control bttn-inp URL-enter" name="video" type="text" placeholder="Enter URL of the youtube video" size="90" style="text-align:center;border:none;border-bottom:1px solid black;background-color:transparent;font-weight:bold;color:white;">
+                    <input class="search form-control bttn-inp URL-enter" name="video" type="text" placeholder="Enter URL of the youtube video" size="90" style="">
                 </label>
             </div>
             <div  class="col-xs-4 offset-xs-4 col-lg-4 form-group bttn" style=" height : 100px; padding-top : 30px ">
@@ -84,8 +103,8 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row" style="padding: 20vh 25vw 10vh 25vw;">
-        <div class="col-xs-8 offset-xs-2 col-lg-8 offset-lg-2" style=" height : 100px; line-height: 20px; text-align: center">
+    <div class="row" style="padding-top: 80px">
+        <div class="col-xs-8 offset-xs-2 col-lg-8 offset-lg-2" style=" height : 100px; line-height: 20px; text-align: center;font-size: 1.5em">
             <p> &lt; / &gt; &nbsp; in &nbsp; <img src="views/img/like.png"> &nbsp; by <br><br>
                 <a href="https://github.com/YOPrateek" style="color:white;"> <i class="fa fa-github" style="color:white;font-size:40px;"></i> YoPrateek </a></p>
         </div>
