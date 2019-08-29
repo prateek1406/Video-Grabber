@@ -1,0 +1,4 @@
+data.details.title
+data.details.thumbnailUrl
+data.details.likeCount
+data.details.views
