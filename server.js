@@ -24,9 +24,21 @@ app.get('/', (req,res) => {
 
 app.get('/test', (r,s) => s.json({test : "This is test route"}))
 
+function extractVideoID(url){
+    // console.log(url);
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if ( match && match[7].length == 11 ){
+        // console.log(match[7]);
+        return match[7];
+    }else{
+        alert("Could not extract video ID.");
+    }
+}
+
 app.get('/download',(req,res)=>{
 
-    fetchVideoInfo('kXYiU_JCYtU', function (err, videoInfo) {
+    fetchVideoInfo("2zyEs5tTaK8", function (err, videoInfo) {
         if (err) throw new Error(err);
         else
 {
@@ -40,6 +52,8 @@ app.get('/download',(req,res)=>{
       });
 
 });
+
+
 
 
 
