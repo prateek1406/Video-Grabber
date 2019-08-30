@@ -23,15 +23,14 @@
                     background:url('image.png');
                     background-size:cover;
                     background-attachment: fixed;
+                    background-repeat:no-repeat;
                 }
                 input::placeholder
                 {
                     text-align:center;
                 }
-                #image {
-
-                    display:none;
-                }
+               
+               
                 @media(min-width:900px)
                 {
                     .btn
@@ -48,7 +47,8 @@
                     {
                         margin-left:200px;
                     }
-                }
+                   
+                    }
         
         @media (max-width:900px)
         {
@@ -62,6 +62,7 @@
                 text-align:center;
                 /* margin-left:300px; */
             }
+            
         }
         @media(min-width:577px) and (max-width:992px)
         {
@@ -75,7 +76,13 @@
                 margin-left:300px;
             }
         }
-        
+         input:focus
+                {
+                    outline:none;
+                    border:none;
+                    
+                }
+               
         
             </style>
 </head>
@@ -88,9 +95,9 @@
             <div class="row">
                 <div class="col-2"></div>
             <div class="col-lg-5 col-xs-8 col-md-8 col-sm-8">
-                <form action='/download' class="form">
+                <form action='/download' method="GET">
             <input placeholder="Paste The Youtube Link..." type="text" name="video" id="inputPlaceholderEx" class="form-control" style="font-weight:bold;"></div>
-           <div class="col-lg-5 col-xs-8 col-md-8 col-sm-8"><button type="submit" class="btn btn-primary" style="margin-top:10px;">Search</button></div> 
+           <div class="col-lg-5 col-xs-8 col-md-8 col-sm-8"><button type="submit" class="btn btn-primary" style="margin-top:10px;">Download</button></div> 
             </div>
             </form>
             <div class="col-2"></div>
@@ -99,17 +106,6 @@
 
         
     </div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div id="image">
-                <img src="" id="thumbnail">
-            </div>
-
-    </div>
-    </div>
-    </div>
-   
 <div class="container-fluid" style="position:absolute;bottom:0;transform:translateY(-40px);">
     <div class="footer" style="text-align:center;">
     <div class="col-12" style="color:white;font-size:30px;">    
@@ -125,35 +121,6 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-
-$(document).ready(function(){
-
- $('.form').submit(function(){
-    fetch('http://localhost:3000/download', {
-        method: "get",
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-         
-        },
-        })
-
-
-        .then((response) => {
-          return response.json()
-          //do something awesome that makes the world a better place
-        })
-        .then(data => {
-                      document.getElementById('image').style.display='block'
-                      var image=document.getElementById('thumbnail')
-                     image.setAttribute('src',data.details.thumbnailUrl)
-        })
-
- })
-
-
-});
-
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
