@@ -1,11 +1,9 @@
 const express = require('express');
 const hbs = require('hbs');
-const fs = require('fs');
-const bodyParser=require('body-parser');
-const MongoClient = require('mongodb').MongoClient;
-const cors = require("cors");
-var fetchVideoInfo = require('youtube-info');
+
+
 const ytdl = require('ytdl-core');
+
 
 
 const port =process.env.PORT || 3000;
@@ -45,6 +43,10 @@ connection((status) => {
                 format: 'mp4'
             }).pipe(res);
         });
+
+      
+
+    
     }
     else{
         app.get("/download", (req, res) => {
