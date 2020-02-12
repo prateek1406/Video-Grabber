@@ -4,8 +4,8 @@ const fs = require('fs');
 // const bodyParser=require('body-parser');
 // const MongoClient = require('mongodb').MongoClient;
 // const cors = require("cors");
-const youtubedl = require('youtube-dl')
-// const ytdl = require('ytdl-core');
+// const youtubedl = require('youtube-dl');
+const ytdl = require('ytdl-core');
 
 
 
@@ -41,9 +41,10 @@ app.get('/', (req,res) => {
 connection((status) => {
     if (status){
         app.get('/download', (req,res) => {
-            const video = youtubedl(req.query.video);
-            console.log(req.query.video);
-            video.pipe(fs.createWriteStream('myvideo.mp4'));
+            res.header('Content-Disposition', 'attachment; filename="video.mp4"');
+            ytdl(req.query.video, {
+                format: 'mp4'
+                }).pipe(res);
         });
 
       
