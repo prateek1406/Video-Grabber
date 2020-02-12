@@ -1,23 +1,25 @@
 {
-  "name": "task1",
+  "name": "video-grabber",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "A video downloading web application",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateek1406/Video-Grabber.git"
+  },
+  "author": "Prateek",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prateek1406/Video-Grabber/issues"
+  },
+  "homepage": "https://github.com/prateek1406/Video-Grabber#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "get-youtube-id": "^1.0.1",
-    "hbs": "^4.0.3",
-    "mongodb": "^3.2.2",
-    "youtube-info": "^1.3.2",
-    "youtube-mp3-downloader": "^0.6.3",
-    "ytdl-core": "^0.29.5"
+    "express": "^4.17.1",
+    "hbs": "^4.1.0",
+    "nodemon": "^2.0.2",
+    "youtube-dl": "^3.0.2"
   }
 }

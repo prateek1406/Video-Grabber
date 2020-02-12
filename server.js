@@ -1,20 +1,20 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-const bodyParser=require('body-parser');
-const MongoClient = require('mongodb').MongoClient;
-const cors = require("cors");
-
-const ytdl = require('ytdl-core');
+// const bodyParser=require('body-parser');
+// const MongoClient = require('mongodb').MongoClient;
+// const cors = require("cors");
+const youtubedl = require('youtube-dl')
+// const ytdl = require('ytdl-core');
 
 
 
 const port =process.env.PORT || 3000;
 
 var app = express();
-app.use(cors());
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
+// app.use(cors());
+// app.use(bodyParser.urlencoded({extended : true}));
+// app.use(bodyParser.json());
 app.use(express.static(__dirname + '/views') );
 app.set('view engine', hbs);
 
@@ -41,10 +41,9 @@ app.get('/', (req,res) => {
 connection((status) => {
     if (status){
         app.get('/download', (req,res) => {
-            res.header('Content-Disposition', 'attachment; filename="video.mp4"');
-            ytdl(req.query.video, {
-                format: 'mp4'
-            }).pipe(res);
+            const video = youtubedl(req.query.video);
+            console.log(req.query.video);
+            video.pipe(fs.createWriteStream('myvideo.mp4'));
         });
 
       
