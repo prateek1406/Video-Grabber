@@ -26,25 +26,38 @@ app.get('/', (req,res) => {
 
 // app.get('/test', (r,s) => s.json({test : "This is test route"}))
 
-// function extractVideoID(url){
-//     // console.log(url);
-//     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-//     var match = url.match(regExp);
-//     if ( match && match[7].length == 11 ){
-//         // console.log(match[7]);
-//         return match[7];
-//     }else{
-//         alert("Could not extract video ID.");
-//     }
-// }
+function extractVideoID(url){
+    // console.log(url);
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if ( match && match[7].length == 11 ){
+        // console.log(match[7]);
+        return match[7];
+    }else{
+        alert("Could not extract video ID.");
+    }
+}
 
 connection((status) => {
     if (status){
         app.get('/download', (req,res) => {
-            res.header('Content-Disposition', 'attachment; filename="video.mp4"');
-            ytdl(req.query.video, {
-                format: 'mp4'
-                }).pipe(res);
+
+            let URL=req.query.video;
+            let ID=extractVideoID(URL);
+            console.log(ID);
+            ytdl.getInfo(ID,(err,info)=>
+            {
+                if(err) throw err;
+               const title=info.title;
+               res.header('Content-Disposition', 'attachment; filename="'+title+'.mp4"');
+               ytdl(URL, {
+                   format: 'mp4'
+                   }).pipe(res);
+              
+            })
+           
+            // console.log(info.videoDetails);
+           
         });
 
       

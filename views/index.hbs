@@ -15,9 +15,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
         body {
-            background: #0f0c29;
-            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+       background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
             color: white;
             font-family: 'Rubik', sans-serif;
             background-attachment: fixed;
@@ -29,7 +27,11 @@
         input::placeholder {
             text-align: center;
         }
-
+      input:active 
+      {
+          border:none;
+          outline:none;
+      }
 
         @media(min-width:900px) {
             .btn {
@@ -44,6 +46,10 @@
             .md-form {
                 margin-left: 200px;
             }
+             input:focus {
+    border: none;
+    background: transparent;
+}
 
         }
 
@@ -93,7 +99,7 @@
                 <div class="col-lg-5 col-xs-8 col-md-8 col-sm-8">
                     <form action='/download' method="GET">
                         <input placeholder="Paste The Youtube Link..." type="text" name="video" id="inputPlaceholderEx"
-                            class="form-control" style="font-weight:bold;color: white">
+                            class="form-control" style="font-weight:bold;color: white;">
                 </div>
                 <div class="col-lg-5 col-xs-8 col-md-8 col-sm-8"><button type="submit" class="btn btn-primary"
                         style="margin-top:10px;">Download</button></div>
